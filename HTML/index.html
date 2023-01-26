@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../CSS/index.css">
+    <!-- fav icon -->
+    <link rel="shortcut icon" href="../IMG/nike_logo.jpg">
+    <!-- FontAwesome for social media logos -->
+    <script src="https://kit.fontawesome.com/ea92a5f608.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- navigation bar -->
+    <nav>
+        <!-- social links and phone number -->
+        <div class="social-call">
+            <!-- social links -->
+            <div class="social">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+                <!-- phone number -->
+            <div class="phone">
+                <span>Call 999999999</span>
+            </div>
+        </div>
+    <!-- Menu bar -->
+        <div class="navigation">
+            <!-- logo -->
+            <a href="#" class="logo">
+                <img src="../IMG/nike_logo.jpg"/>
+            </a>
+            <!-- Menu -->
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#">Man</a>
+                    <!-- sale lable -->
+                    <span class="sale-lable">Sale</span>
+                </li>
+                
+                <li><a href="#">Woman</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Shop</a></li>
+            </ul>
+            <!-- right menu -->
+            <div class="right-menu">
+                <!-- search -->
+                <a href="#" class="search">
+                    <i class="fas fa-search"></i>
+                </a>
+                <!-- user -->
+                <a href="#">
+                    <i class="far fa-user"></i>
+                </a>
+                <!-- cart icon -->
+                <a href="#">
+                    <i class="fas fa-shopping-cart">
+                    <!-- number of products -->
+                    <span class="num-cart-product">0</span>
+                </i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- search bar -->
+    <div class="search-bar">
+        <!-- search input -->
+        <div class="search-input">
+            <!-- input -->
+            <input type="text" placeholder="Search for product"/>
+            <!-- cancel button -->
+            <a href="#" class="search-cancel">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- JQuery -->
+    <script src="../JS/JQuery.js"></script>
+    <!-- script -->
+    <script type="text/javascript">
+        /*For search bar*/
+        $(document).on('click','.search',function(){
+            $('.search-bar').addClass('search-bar-active')
+        });
+
+        $(document).on('click','.search-cancel',function(){
+            $('.search-bar').removeClass ('search-bar-active')
+        });
+    </script>
+</body>
+</html>
