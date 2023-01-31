@@ -2,6 +2,8 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Shop</title>
     <!-- stylesheet -->
     <link rel="stylesheet" type="text/css" href="../CSS/index.css"/>
@@ -38,6 +40,11 @@
             <a href="#" class="logo">
                 <img src="../IMG/nike_logo.jpg"/>
             </a>
+            <!-- menu icon -->
+            <div class="toggle">
+
+            </div>
+
             <!-- Menu -->
             <ul class="menu">
                 <li><a href="#">Home</a></li>
@@ -592,13 +599,42 @@
 
     <!-- services -->
         <section class="services">
-            <!-- services box -->
+            <!-- services box 1 -->
             <div class="services-box">
                 <i class="fas fa-shipping-fast"></i>
                 <span>Free Shipping</span>
                 <p>Free Shipping For All PT Orders</p>
             </div>
+
+            <!-- services box 2 -->
+            <div class="services-box">
+                <i class="fas fa-headphones-alt"></i>
+                <span>Support 24/7</span>
+                <p>We support 24h a day</p>
+            </div>
+
+            <!-- services box 3 -->
+            <div class="services-box">
+                <i class="fas fa-sync"></i>
+                <span>100% Money Back</span>
+                <p>You have 30 days to return</p>
+            </div>
         </section>
+
+        <!-- footer -->
+        <footer>
+            <!-- copyright -->
+            <span class="copyright">
+                Copyright 2022 - André Mourão
+            </span>
+            <!-- subscribe Newsletter -->
+            <div class="subscribe">
+                <form>
+                    <input type="email" placeholder="Example@gmail.com" required/>
+                    <input type="submit" value="Subscribe"/>
+                </form>
+            </div>
+        </footer>
 
     <!-- script -->
     <script type="text/javascript">
@@ -645,6 +681,24 @@
                 } 
             });  
         });
+
+        /*for fix menu when scroll*/
+        $(window).scroll(function(){
+            if($(document).scrollTop() > 50){
+                $('.navigation').addClass('fix-nav');
+            }
+            else{
+                $('.navigation').removeClass('fix-nav');
+            }
+        });
+
+        /*for responsive menu*/
+        $(document).ready(function(){
+            $('.toggle').click(function(){
+                $('.toggle').toggleClass('active')
+                $('.navigation').toggleClass('active')
+            })
+        })
     </script>
 </body>
 </html>
