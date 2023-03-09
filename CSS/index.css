@@ -370,7 +370,7 @@ nav
 
 .f-slide-1
 {
-    background-image: url();
+    background-image: url(/IMG/banner_1.png );
 }
 
 .f-slide-2
@@ -956,4 +956,16 @@ footer
     {
         width: 90%;
     }
+}
+
+/*Man page*/
+
+#cursor
+{
+    cursor: pointer;
+}
+
+.TitlePage
+{
+    margin: 100px 0px 0px 145px;
 }
