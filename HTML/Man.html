@@ -78,6 +78,56 @@
             </div>
         </div>
     </nav>
+    
+     <!-- login and sign up form-->
+     <div class="form">
+        <!-- login -->
+        <div class="login-form">
+            <!-- cancel button -->
+            <a href="#" class="form-cancel">
+                <i class="fas fa-times"></i>
+            </a>
+
+            <!-- heading -->
+            <strong>Log In</strong>
+            <!-- inputs -->
+            <form >
+                <input type="email" placeholder="Example@gmail.com" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <!-- submit button -->
+                <input type="Submit" value="Log In">
+            </form>
+            <!-- forget and sign up button -->
+            <div class="form-btns">
+                <a href="#" class="forget">Forget Your Password?</a>
+                <a href="#" class="sign-up-btn">Create Account</a>
+            </div>
+        </div>
+
+        <!-- sign up -->
+        <div class="sign-up-form">
+            <!-- cancel button -->
+            <a href="#" class="form-cancel">
+                <i class="fas fa-times"></i>
+            </a>
+
+            <!-- heading -->
+            <strong>Sign Up</strong>
+            <!-- inputs -->
+            <form >
+                <input type="text" placeholder="Full Name" name="fullname" required>
+                <input type="email" placeholder="Example@gmail.com" name="email" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <!-- submit button -->
+                <input type="Submit" value="Sign Up">
+            </form>
+            <!-- forget and sign up button -->
+            <div class="form-btns">
+                <a href="#" class="already-account">Already Have Account?</a>
+            </div>
+        </div>
+    </div>
+
     <!-- search bar -->
     <div class="search-bar">
         <!-- search input -->
@@ -90,12 +140,63 @@
             </a>
         </div>
     </div>
+
+    <!-- Full slider  -->
+
+    <ul id="adaptive" class="cs-hidden">
+        <!-- box 1 -->
+        <li class="item-a">
+            <!-- box -->
+            <div class="full-slider-box f-slide-1">
+                <!-- slider text container -->
+                <div class="slider-text-container">
+                        <div class="f-slider-text">
+                        <span>Limited offer</span>
+                        <strong>30% off<br/> with <font>promo code</font></strong>
+                        <a href="#" class="f-slider-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- box 2 -->
+        <li class="item-a">
+            <!-- box -->
+            <div class="full-slider-box f-slide-2">
+                <!-- slider text container -->
+                <div class="slider-text-container">
+                        <div class="f-slider-text">
+                        <span>Limited offer</span>
+                        <strong>30% off<br/> with <font>promo code</font></strong>
+                        <a href="#" class="f-slider-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- box 3 -->
+        <li class="item-a">
+            <!-- box -->
+            <div class="full-slider-box f-slide-3">
+                <!-- slider text container -->
+                <div class="slider-text-container">
+                        <div class="f-slider-text">
+                        <span>Limited offer</span>
+                        <strong>30% off<br/> with <font>promo code</font></strong>
+                        <a href="#" class="f-slider-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
     <div class="TitlePage">
         <h1>Man</h1>
         <a href="#" class="filter">
             <i class="fa-solid fa-filters"></i>
         </a>
     </div>
+
     <!-- New arrival -->
     <section class="new-arrival">
         <!-- heading -->
@@ -243,5 +344,109 @@
             </div>
         </div>
     </section>
+
+    <!-- services -->
+    <section class="services">
+        <!-- services box 1 -->
+        <div class="services-box">
+            <i class="fas fa-shipping-fast"></i>
+            <span>Free Shipping</span>
+            <p>Free Shipping For All PT Orders</p>
+        </div>
+
+        <!-- services box 2 -->
+        <div class="services-box">
+            <i class="fas fa-headphones-alt"></i>
+            <span>Support 24/7</span>
+            <p>We support 24h a day</p>
+        </div>
+
+        <!-- services box 3 -->
+        <div class="services-box">
+            <i class="fas fa-sync"></i>
+            <span>100% Money Back</span>
+            <p>You have 30 days to return</p>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <!-- copyright -->
+        <span class="copyright">
+            Copyright 2022 - André Mourão
+        </span>
+        <!-- subscribe Newsletter -->
+        <div class="subscribe">
+            <form>
+                <input type="email" placeholder="Example@gmail.com" required/>
+                <input type="submit" value="Subscribe"/>
+            </form>
+        </div>
+    </footer>
+    
+    <!-- script -->
+    <script type="text/javascript">
+        /*For search bar*/
+        $(document).on('click','.search',function(){
+            $('.search-bar').addClass('search-bar-active')
+        });
+
+        $(document).on('click','.search-cancel',function(){
+            $('.search-bar').removeClass ('search-bar-active')
+        });
+
+        /*login sign up form*/
+        $(document).on('click','.user,.already-account',function(){
+            $('.form').addClass('login-active').removeClass('sign-up-active')
+        });
+
+        $(document).on('click','.sign-up-btn',function(){
+            $('.form').addClass('sign-up-active').removeClass('login-active')
+        });
+
+        $(document).on('click','.form-cancel',function(){
+            $('.form').removeClass ('login-active').removeClass ('sign-up-active')
+        });
+
+        /*full slider script*/
+        $(document).ready(function() {
+            $('#adaptive').lightSlider({
+                adaptiveHeight:true,
+                auto:true,
+                item:1,
+                slideMargin:0,
+                loop:true
+            });
+        });
+
+        /*Feature slider*/
+        $(document).ready(function() {
+            $('#autoWidth').lightSlider({
+                autoWidth:true,
+                loop:true,
+                onSliderLoad: function() {
+                $('#autoWidth').removeClass('cS-hidden');
+                } 
+            });  
+        });
+
+        /*for fix menu when scroll*/
+        $(window).scroll(function(){
+            if($(document).scrollTop() > 50){
+                $('.navigation').addClass('fix-nav');
+            }
+            else{
+                $('.navigation').removeClass('fix-nav');
+            }
+        });
+
+        /*for responsive menu*/
+        $(document).ready(function(){
+            $('.toggle').click(function(){
+                $('.toggle').toggleClass('active')
+                $('.navigation').toggleClass('active')
+            })
+        })
+    </script>
 </body>
 </html>
